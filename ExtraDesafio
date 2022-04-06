@@ -1,0 +1,154 @@
+package desafio2.divisores;
+import java.util.Random;
+import java.util.Scanner;
+import java.text.Format;
+import java.beans.ConstructorProperties;
+import java.text.ChoiceFormat;
+import java.awt.Cursor;
+
+
+public class Desafio2Divisores {
+public static int tam = 100;
+
+public static void imprime(int vet[]) {
+    J jht = new J();
+    int a=0, i, temp, y, result=0;
+        
+    for(i=1; i<=tam; i++) {
+        vet[a]=1;
+        a++;
+    }
+    Random random = new Random();
+    for (a=0; a<tam; a++) {
+        y = random.nextInt(tam);
+        temp = vet[a];
+        vet[a]=vet[y];
+        vet[y]=temp;
+    }
+    jht.textcolor (jht.BLACK);
+    for(i=0; i<vet.length; i++) {
+        if(i == 0)
+            jht.gotoxy((int)21, (int)6);
+        if(i == 10)
+            jht.gotoxy((int)21, (int)7);
+        if(i == 20)
+            jht.gotoxy((int)21, (int)8);
+        if(i == 30)
+            jht.gotoxy((int)21, (int)9);
+        if(i == 40)
+            jht.gotoxy((int)21, (int)10);
+        if(i == 50)
+            jht.gotoxy((int)21, (int)11);
+        if(i == 60)
+            jht.gotoxy((int)21, (int)12);
+        if(i == 70)
+            jht.gotoxy((int)21, (int)13);
+        if(i == 80)
+            jht.gotoxy((int)21, (int)14);
+        if(i == 90)
+            jht.gotoxy((int)21, (int)15);
+        System.out.print(" ");
+        System.out.printf("%3d", vet[i]);
+        result += vet[i];
+    }
+    jht.textcolor(jht.LIGHTBLUE);
+    jht.gotoxy((int)22, (int)17);
+    jht.Sleep((short)500);
+    System.out.printf("Total de numeros gerados ==> ");
+    jht.textcolor(jht.LIGHTRED);
+    System.out.printf("%d", i);
+    jht.textcolor(jht.LIGHTBLUE);
+    jht.gotoxy((int)22, (int)18);
+    jht.Sleep((short)500);
+    System.out.printf("Soma dos numeros gerados ==> ");
+    jht.textcolor(jht.LIGHTRED);
+    System.out.printf("%d", result);
+    jht.Sleep((short)500);
+}
+        
+
+    public static void main (String args []) {
+    
+    int vet [] = new int [tam];
+    int i;
+    J jht = new J();
+    jht.textbackground (jht.WHITE);
+    jht.Moldura((short)1, (short)30, (short)2, (short)78);
+        jht.title("");
+        jht.textcolor(jht.LIGHTRED);
+        jht.gotoxy((int)28, (int)2);
+        System.out.printf("DIVISORES DE NUMEROS EM ARRAY");
+        jht.textcolor(jht.LIGHBLUE);
+        jht.gotoxy((int)28, (int)4);
+        System.out.printf("Abaixo os ");
+        jht.textcolor(jht.LIGHTRED);
+        System.out.printf("100");
+        jht.textcolor(jht.LIGHBLUE);
+        System.out.printf("números gerados");
+        jht.textcolor(jht.LIGHTBLACK);
+        imprime(vet);
+        int j=0;
+        
+        jht.textcolor(jht.LIGHBLUE);
+        jht.gotoxy((int)22, (int)20);
+        System.out.printf("Digite um número entre ");
+        jht.textcolor(jht.LIGHTRED);
+        System.out.printf("2");
+        jht.textcolor(jht.LIGHBLUE);
+        System.out.printf(" e");
+        jht.textcolor(jht.LIGHTRED);
+        System.out.printf("100");
+        jht.textcolor(jht.LIGHTBLACK);
+        Scanner sc=new Scanner(System.in);
+        j = sc.nextInt();
+        jht.textcolor(jht.LIGHTBLUE);
+        jht.gotoxy((int)22, (int)22);
+        System.out.printf("Abaixo seus divisores no array ");
+        jht.gotoxy((int)22, (int)24);
+        jht.textcolor(jht.LIGHTBLACK);
+        for(i=1; i<=j; i++){
+            if(j%i==0)
+                System.out.printf("%3d", i);
+        }
+        jht.textcolor(jht.LIGHTBLUE);
+        jht.gotoxy((int)22, (int)26);
+        jht.Sleep((short)1800);
+        System.out.printf("Por: ");
+        jht.textcolor(jht.MAGENTA);
+        System.out.printf("Julio Jardim");
+        jht.textcolor(jht.BLACK);
+        jht.gotoxy((int)22, (int)27);
+        System.out.printf("jcaj03@hotmail.com");
+        jht.Sleep((short)1800);
+        jht.textcolor(jht.LIGHTRED);
+        jht.gotoxy((int)34, (int)29);
+        System.out.printf("MUITO OBRIGADO");
+        jht.getche();
+    }
+
+    private static class J {
+
+        public J() {
+        }
+
+        private void gotoxy(int i, int i0) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void Sleep(short s) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void Moldura(short s, short s0, short s1, short s2) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void title(String string) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void getche() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+}
