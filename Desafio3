@@ -1,0 +1,25 @@
+package numerosprimos;
+import java.util.Scanner;
+
+public class NumerosPrimos {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num;
+        int a=0;
+        System.out.println("Insira o número: ");
+        num = sc.nextInt();
+        
+        for(int i=1; i<=num; i++){
+            if(num%i == 0){
+            a++;            
+        }
+        }
+        if(a==2) {
+            System.out.println("És número primo");
+        } else {
+            System.out.println("Não és número primo");
+            System.exit(0);
+        }
+    }
+}
